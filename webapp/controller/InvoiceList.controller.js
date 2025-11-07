@@ -34,7 +34,7 @@ sap.ui.define(
 
       onFilterInvoicesByStatus(oEvent) {
         const aFilter = [];
-        const selectedKeyStatus = oEvent.oSource.mProperties.selectedKey;
+        const selectedKeyStatus = oEvent.getSource().getSelectedKey();
 
         if (selectedKeyStatus && selectedKeyStatus !== "all") {
           aFilter.push(
