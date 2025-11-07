@@ -32,9 +32,23 @@ sap.ui.define(
         oBinding.filter(aFilter);
       },
 
+      onFilterInvoicesByStatus(oEvent) {
+        const aFilter = [];
+        const selectedKeyStatus = oEvent.oSource.mProperties.selectedKey;
+
+        if (selectedKeyStatus && selectedKeyStatus !== "all") {
+          aFilter.push(
+            new Filter("Status", FilterOperator.Contains, selectedKeyStatus),
+          );
+        }
+
+        const oList = this.byId("invoiceList");
+        const oBinding = oList.getBinding("items");
+        oBinding.filter(aFilter);
+      },
+
       onPress(oEvent) {
         const oItem = oEvent.getSource();
-        console.log("oItem = ", oItem);
         const oRouter = this.getOwnerComponent().getRouter();
         oRouter.navTo("detail", {
           invoicePath: window.encodeURIComponent(

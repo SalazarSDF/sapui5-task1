@@ -13,6 +13,30 @@
                     width="50%"
                     search=".onFilterInvoices"
                 />
+                <ComboBox change=".onFilterInvoicesByStatus">
+                    <items>
+                        <core:Item
+                            xmlns:core="sap.ui.core"
+                            key="all"
+                            text="All"
+                        />
+                        <core:Item
+                            xmlns:core="sap.ui.core"
+                            key="A"
+                            text="{i18n>invoiceStatusA}"
+                        />
+                        <core:Item
+                            xmlns:core="sap.ui.core"
+                            key="B"
+                            text="{i18n>invoiceStatusB}"
+                        />
+                        <core:Item
+                            xmlns:core="sap.ui.core"
+                            key="C"
+                            text="{i18n>invoiceStatusC}"
+                        />
+                    </items>
+                </ComboBox>
             </Toolbar>
         </headerToolbar>
 
